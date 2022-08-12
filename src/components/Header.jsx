@@ -1,9 +1,9 @@
-
+import h from'./Header.module.css'
 
 const Header = () => {
     return (
-        <header className="header">
-            <div className="logo">
+        <header className={h.header}>
+            <div className={h.logo}>
                 intouch
             </div>
         </header>
