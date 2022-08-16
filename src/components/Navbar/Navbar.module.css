@@ -3,11 +3,14 @@
     background-color: dimgrey;
 }
 
-.item a {
-    color: white;
+.nav a {
     text-decoration: none;
 }
 
-.item.active a {
+.item {
+    color: white;
+}
+
+.active {
     color: gold;
 }
