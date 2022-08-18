@@ -14,15 +14,6 @@ const Navbar = () => {
                          className={({isActive}) => (isActive ? classes.active : classes.item)}
                 >Message</NavLink>
             </div>
-            {/*<div >*/}
-            {/*    <Link to="/news">News</Link>*/}
-            {/*</div>*/}
-            {/*<div >*/}
-            {/*    <Link to="/music">Music</Link>*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <Link to="/settings">Settings</Link>*/}
-            {/*</div>*/}
         </nav>
     )
 }
