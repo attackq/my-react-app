@@ -1,17 +1,25 @@
 import Post from "./Post/Post";
 import s from './Posts.module.css'
+import React from "react";
 
 const Posts = (props) => {
+
+    let newPostText = React.createRef()
+
+    let onClickAlert = () => {
+        debugger;
+        props.addPost(newPostText.current.value)
+    }
 
     return (
         <div className={s.posts}>
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostText}></textarea>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={onClickAlert}>Add post</button>
                 </div>
             </div>
             <div className={s.post}>

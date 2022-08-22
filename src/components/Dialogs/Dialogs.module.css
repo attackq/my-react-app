@@ -6,6 +6,7 @@
 .dialogs {
     flex: 1 1 30%;
     padding: 10px;
+
 }
 .dialogs a {
     text-decoration: none;
@@ -23,7 +24,17 @@
     flex: 1 1 70%;
     padding: 10px;
 }
-
+.dialog {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 .message {
 
+}
+
+.logo {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }

@@ -12,11 +12,11 @@ const App = (props) => {
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <Navbar/>
+                <Navbar state={props.state.dialogsPage.dialogs}/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route  path="/profile/" element={<Profile postsData={props.postsData}/>}/>
-                        <Route path="/dialogs/*" element={<Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>}/>
+                        <Route  path="/profile/" element={<Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
+                        <Route path="/dialogs/*" element={<Dialogs state={props.state.dialogsPage}/>}/>
                         <Route path="/news" element={<News/>}/>
                     </Routes>
                 </div>
@@ -24,6 +24,5 @@ const App = (props) => {
         </BrowserRouter>
     );
 }
-
 
 export default App;
