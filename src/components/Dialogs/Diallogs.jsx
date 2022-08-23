@@ -8,18 +8,22 @@ const Dialogs = (props) => {
     let messageData = React.createRef();
 
     let addMessage = () => {
-        alert(messageData.current.value);
+        props.addMessage();
+    }
+
+    let updateMessageText = () => {
+        props.updateMessageText(messageData.current.value);
     }
 
     return (<div className={style.dialogsWrapper}>
         <div className={style.dialogs}>
-            {props.state.dialogs.map((dialog, ind) => (
+            {props.dialogsPage.dialogs.map((dialog, ind) => (
                 <DialogItem name={dialog.name} id={dialog.id} logo={dialog.logo} key={ind}/>))}
         </div>
         <div className={style.messages}>
-            {props.state.messages.map((message, index) => (
+            {props.dialogsPage.messages.map((message, index) => (
                 <Message message={message.text} key={index}/>))}
-            <textarea ref={messageData}></textarea>
+            <textarea ref={messageData} onChange={updateMessageText} value={props.messageValue}></textarea>
             <div>
                 <button onClick={addMessage}>add message</button>
             </div>
