@@ -5,9 +5,9 @@ const Friends = (props) => {
     return (
         <div className={classes.friends}>
             <h2>Friends</h2>
-            {props.state.map((person, ind) => (
-                <Friend name={person.name} logo={person.logo} key={ind}/>
-            ))}
+            {/*{props.state.map((person, ind) => (*/}
+            {/*    <Friend name={person.name} logo={person.logo} key={ind}/>*/}
+            {/*))}*/}
         </div>
     )
 }
