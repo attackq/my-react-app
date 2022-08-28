@@ -5,10 +5,11 @@ import React from "react";
 import {addMessageCreator, updateMessageTextCreator} from "../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
-
     let state = props.store.getState().dialogsPage;
+    console.log(state)
 
     let messageData = React.createRef();
+
     let newMessageText = state.newMessageText;
 
     let addMessage = () => {

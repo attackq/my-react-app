@@ -4,7 +4,6 @@ import React from "react";
 import {addPostCreator, updateNewPostCreator} from "../../../redux/profile-reducer";
 
 const Posts = (props) => {
-
     let newPostText = React.createRef();
     let profileState = props.store.getState().profilePage;
 
