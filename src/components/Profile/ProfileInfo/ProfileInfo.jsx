@@ -1,6 +1,12 @@
 import s from './ProfileInfo.module.css'
+import Preloader from "../../common/Preloader/Preloader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+    if (!props.profile) {
+        return <Preloader/>
+    }
+
     return (
         <div className={s.profile}>
             <div className={s.logo}>
@@ -9,7 +15,12 @@ const ProfileInfo = () => {
                     alt=""/>
             </div>
             <div className={s.description}>
-                description + ava
+                <img src={props.profile.photos.small} alt=""/>
+                <div>{props.profile.fullName}</div>
+                <div>{props.profile.aboutMe}</div>
+                {props.profile.lookingForAJob
+                    ? <button>HELP ME FIND MY JOB</button>
+                    : <button>NICE JOB BRO</button>}
             </div>
         </div>
     )

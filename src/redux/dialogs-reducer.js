@@ -39,22 +39,25 @@ let initialState = {
             logo: 'https://media.istockphoto.com/photos/small-shrinking-currency-dollar-in-inflation-on-white-background-picture-id174672992?k=20&m=174672992&s=170667a&w=0&h=Rr0jffK_3BH408K7BVQ_QMLNHO6sNmJE8JJfwBVzkmw='
         }
     ],
-    newMessageText: '',
+    newMessageText: ' ',
 }
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
-            let newMessage = {
-                id: 5,
-                text: state.newMessageText,
+        case ADD_MESSAGE: {
+            let body = state.newMessageText;
+            return {
+                ...state,
+                newMessageText: '',
+                messages: [...state.messages, {id: 5, text: body}],
             }
-            state.messages.push(newMessage);
-            state.newMessageText = '';
-            return state;
-        case UPDATE_MESSAGE_TEXT:
-            state.newMessageText = action.newMessageText;
-            return state;
+        }
+        case UPDATE_MESSAGE_TEXT: {
+            return {
+                ...state,
+                newMessageText: action.newMessageText
+            }
+        }
         default:
             return state;
     }
